@@ -438,10 +438,11 @@ void rxSerialTask(void* parameter) {
     while (1) {
         while (AP_SERIAL_PORT.available()) {
             lastchar = AP_SERIAL_PORT.read();
+            
             switch (RXState) {
                 case ZBS_RX_WAIT_HEADER:
 
-                    Serial.write(lastchar);
+                    //Serial.write(lastchar);
 
                     //  shift characters in
                     for (uint8_t c = 0; c < 3; c++) {
